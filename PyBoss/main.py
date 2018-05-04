@@ -1,20 +1,20 @@
 import os
 import csv
 
-"""This is the PyBoss Hw main script file"""
+"""This is the PyBoss Hw main script file
+declare variables for use in main function, not necessary but helps me understand what key variables are
+"""
 fullName = []
-firstName = []
-lastName = []
 DOB = []
 DOBNew = []
 SSN = []
 SSNNew = []
-newState = []
 newEmployeeInfo = []
 
 
-
+'ask for user input of file name, not including .csv suffix'
 userfile = input("Which file would you like to open?   ")
+'open file and define a function to grab state abbreviations'
 with open(userfile + ".csv" , 'r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     def GetState(arg1):
@@ -72,7 +72,11 @@ with open(userfile + ".csv" , 'r') as csv_file:
         }
             return us_state_abbrev[arg1] 
     
-
+    'iterate through each line in csv file and split full name'
+    'afterwards split DOB and replace with //'
+    'pull last 4 digits of SSN and replace the rest with *'
+    'call GetState function to get abbreviation'
+    'append everything to a new dict'
     for line in csv_reader:
         fullName = line["Name"].split(' ')
         firstName = fullName[0] 
@@ -93,6 +97,7 @@ with open(userfile + ".csv" , 'r') as csv_file:
             
             }
         )
+'write new csv file and use newEmployeeInfo to write rows'        
 newuserfile = userfile + ".csv"
  
 
