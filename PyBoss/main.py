@@ -75,13 +75,13 @@ with open(userfile + ".csv" , 'r') as csv_file:
 
     for line in csv_reader:
         fullName = line["Name"].split(' ')
-        firstName.append(fullName[0]) 
-        lastName.append(fullName[1])
+        firstName = fullName[0] 
+        lastName = fullName[1]
         DOB = line["DOB"].split("-")
-        DOBNew.append(DOB[1] + "/" + DOB[2] + "/" + DOB[0])
-        SSN.append(line["SSN"].split("-"))
-        SSNNew.append("***-**-" + SSN[2])
-        newState.append(GetState(line["State"]))
+        DOBNew = (DOB[1] + "/" + DOB[2] + "/" + DOB[0])
+        SSNSplit = line["SSN"].split("-")
+        SSNNew = "***-**-" + SSNSplit[2]
+        newState = GetState(line["State"])
         newEmployeeInfo.append(
             {
                 "Emp ID" : line["Emp ID"],
@@ -93,7 +93,7 @@ with open(userfile + ".csv" , 'r') as csv_file:
             
             }
         )
-newuserfile = userfile
+newuserfile = userfile + ".csv"
  
 
 csvpath = os.path.join("output", newuserfile)
