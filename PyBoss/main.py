@@ -107,4 +107,7 @@ with open(csvpath, "w") as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(newEmployeeInfo)
+    
+    for line in newEmployeeInfo:
+        print(line)
         
