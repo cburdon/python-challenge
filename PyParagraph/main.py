@@ -8,7 +8,7 @@ wordArray = []
 paragraph = open(userfile + ".txt").read()
 'iterate through each line of the file, construct wordArray out of each separate word'
 'get count of words from length of array'   
-wordArray = (paragraph.split(" ")) 
+wordArray = (paragraph.split()) 
 wordCount = len(wordArray)
 'add up total number of words using wordCount range, then divide to calculate average letters'
 for i in range(0, wordCount):

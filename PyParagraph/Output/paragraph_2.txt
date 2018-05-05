@@ -1,5 +1,5 @@
 paragraph_2 analysis:
-Approximate Word Count: 276
+Approximate Word Count: 285
 Approximate Sentence Count: 11
-Average Letter count: 5.4855072463768115
-Average Sentence Length: 25.09090909090909
+Average Letter count: 5.249122807017544
+Average Sentence Length: 25.90909090909091
